@@ -34,9 +34,4 @@ Nesta atividade foi criado um script que insere dinamicamente no `body` da pági
 
 > O código foi feito em JavaScript puro, sem uso de bibliotecas externas, e está 100% de acordo com os requisitos da tarefa.
 
----
 
-## ✅ Como testar
-
-1. Clone ou baixe este repositório.
-2. Navegue até a pasta da
