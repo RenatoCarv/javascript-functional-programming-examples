@@ -1,6 +1,6 @@
 # 📘 JavaScript - Programação Funcional e Manipulação de DOM
 
-Este repositório contém a implementação das atividades propostas na disciplina de JavaScript, abordando conceitos fundamentais da programação funcional e manipulação dinâmica de elementos HTML com JavaScript puro.
+Este repositório contém a implementação das atividades propostas na disciplina de programação 5, abordando conceitos fundamentais da programação funcional e manipulação dinâmica de elementos HTML com JavaScript puro.
 
 ---
 
