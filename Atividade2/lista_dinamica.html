@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Dinâmica</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+    }
+    button {
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Criando elementos dinamicamente
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Digite algo...";
+
+  const btnAdicionar = document.createElement("button");
+  btnAdicionar.textContent = "Adicionar";
+
+  const btnExcluir = document.createElement("button");
+  btnExcluir.textContent = "Excluir";
+  btnExcluir.disabled = true;
+
+  // Adiciona os elementos ao body
+  document.body.appendChild(input);
+  document.body.appendChild(btnAdicionar);
+  document.body.appendChild(btnExcluir);
+
+  let lista;
+  const itens = new Set(); // Para evitar duplicados
+
+  // Função para atualizar o estado do botão Excluir
+  function atualizarEstadoExcluir() {
+    if (lista && lista.children.length > 0) {
+      btnExcluir.disabled = false;
+    } else {
+      btnExcluir.disabled = true;
+    }
+  }
+
+  // Evento do botão Adicionar
+  btnAdicionar.addEventListener("click", () => {
+    const texto = input.value.trim();
+    if (!texto || itens.has(texto)) return;
+
+    // Cria a lista se ainda não existir
+    if (!lista) {
+      lista = document.createElement("ul");
+      document.body.appendChild(lista);
+    }
+
+    // Adiciona novo item
+    const li = document.createElement("li");
+    li.textContent = texto;
+    lista.appendChild(li);
+
+    itens.add(texto);
+    input.value = "";
+    atualizarEstadoExcluir();
+  });
+
+  // Evento do botão Excluir
+  btnExcluir.addEventListener("click", () => {
+    if (lista && lista.lastChild) {
+      const ultimoTexto = lista.lastChild.textContent;
+      lista.removeChild(lista.lastChild);
+      itens.delete(ultimoTexto);
+      atualizarEstadoExcluir();
+    }
+  });
+</script>
+
+</body>
+</html>
